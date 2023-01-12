@@ -1,0 +1,40 @@
+<h1>Hello from rails!</h1>
+<p>
+    Now the time is: <%= Time.now%>
+</p>
+<p> This is the time variable form the controller:<%= @time%> @time </p>
+
+<p> Say <a href="/say/goodbye">Goodbye !</a>using a tag </p>
+
+<p>
+   Time to say -using helper method in rails :-)
+   <%= link_to "Goodbye", say_goodbye_path %>!
+</p>
+<%# 
+<script type="text/javascript">
+ setInterval(function(){
+   let currentTime = new Date();
+   document.body.innerHTML = currentTime.toLocaleString();
+}, 1000);
+</script>
+%>
+<%= content_tag(:span, Time.now, id: 'current-time') %>
+<script>
+  setInterval(() => {
+    document.getElementById('current-time').innerText = new Date().toTimeString();
+  }, 1000);
+</script>
+
+<p>Addition: <%= 1+1 %></p>
+<p><%="cow"+" boy"  %></p>
+<p>Time in one hour
+ <%= 1.hour.from_now.localtime %> 
+ </p>
+
+ <p> To see all the files in rails from the controller with a variable.
+ </p>
+
+ <% @files.each do |file| %>
+ <%= file %>
+<% end %>
+ 
